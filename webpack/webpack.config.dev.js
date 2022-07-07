@@ -31,7 +31,7 @@ module.exports = {
       {
         test: /\.(mjs|js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader'],
+        use: ['babel-loader','eslint-loader'],
       },
            {
                test: cssRegex,
@@ -69,7 +69,18 @@ module.exports = {
                  },
                  'sass-loader',
                ],
-             }
+             },
+     {
+       test: /\.(png|jpg|gif|woff|svg|eot|ttf)$/,
+       use: [{
+         loader: 'url-loader',
+         options: {
+           limit: 10000,
+           name: 'assets/[hash].[ext]',
+         },
+       }],
+      },
+            
     ],
   },
 

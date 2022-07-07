@@ -4,7 +4,7 @@ import css from './index.module.css';
 import scss from './index.module.scss';
 import './index.css';
 import './index.scss';
-
+import img from './assets/commander.png'
 
 const App = () => (
   <div
@@ -15,7 +15,7 @@ const App = () => (
    ${scss['module-scss']}
  `}
   >
-    test page
+   <img src={img} alt="" />
   </div>
 );
 reactDom.render(<App/>, document.getElementById('root'));
